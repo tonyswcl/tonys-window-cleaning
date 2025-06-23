@@ -7,149 +7,99 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --primary-bg: #0f172a;
-      --secondary-bg: #1e293b;
+      --bg-dark: #0f172a;
+      --bg-medium: #1e293b;
+      --bg-light: #334155;
       --accent: #3b82f6;
-      --text: #f1f5f9;
-      --card-bg: #334155;
+      --text-light: #f1f5f9;
     }
-
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: var(--primary-bg);
-      color: var(--text);
-      transition: all 0.3s ease;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
     }
-
-    header {
-      background: var(--secondary-bg);
-      color: var(--text);
-      padding: 2rem 1rem;
+    header, footer {
+      background-color: var(--bg-medium);
       text-align: center;
-      animation: fadeIn 1.2s ease-in-out;
+      padding: 2rem 1rem;
     }
-
     header h1 {
       margin: 0;
       font-size: 2.5rem;
     }
-
     header p {
       margin-top: 0.5rem;
       font-size: 1.1rem;
-      font-weight: 300;
+      color: #cbd5e1;
     }
-
     nav {
-      background: var(--card-bg);
+      background-color: var(--bg-light);
       text-align: center;
-      animation: slideDown 0.6s ease;
+      padding: 1rem 0;
     }
-
     nav a {
-      color: var(--text);
-      padding: 1rem;
-      display: inline-block;
+      color: white;
+      margin: 0 1rem;
       text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s;
+      font-weight: bold;
     }
-
     nav a:hover {
-      background: var(--accent);
+      text-decoration: underline;
     }
-
     section {
-      padding: 2rem 1rem;
-      max-width: 900px;
+      max-width: 960px;
       margin: auto;
+      padding: 2rem 1rem;
     }
-
-    .services, .contact {
-      background: var(--card-bg);
-      border-radius: 12px;
-      margin-bottom: 2rem;
+    .card {
+      background-color: var(--bg-light);
       padding: 2rem;
-      animation: fadeInUp 1s ease forwards;
+      border-radius: 10px;
+      margin-bottom: 2rem;
     }
-
     h2 {
-      margin-top: 0;
       color: var(--accent);
+      margin-top: 0;
     }
-
     .map {
       width: 100%;
       height: 300px;
       border: none;
-      margin-top: 1rem;
       border-radius: 8px;
     }
-
     form {
       display: grid;
       gap: 1rem;
-      margin-top: 1rem;
     }
-
     input, textarea, button {
       padding: 0.75rem;
+      font-size: 1rem;
       border-radius: 8px;
       border: none;
-      font-size: 1rem;
-      width: 100%;
     }
-
     input, textarea {
-      background: #cbd5e1;
+      background-color: #cbd5e1;
       color: #0f172a;
     }
-
     button {
-      background: var(--accent);
+      background-color: var(--accent);
       color: white;
       font-weight: bold;
       cursor: pointer;
     }
-
     button:hover {
-      background: #2563eb;
+      background-color: #2563eb;
     }
-
-    footer {
-      background: var(--secondary-bg);
-      color: var(--text);
-      text-align: center;
-      padding: 1.5rem 1rem;
-      font-size: 0.9rem;
+    .testimonial {
+      margin: 1rem 0;
+      background: #475569;
+      padding: 1rem;
+      border-radius: 8px;
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .testimonial p {
+      margin: 0.5rem 0 0;
+      font-style: italic;
     }
   </style>
 
@@ -162,7 +112,6 @@
     gtag('config', 'AW-17238956448');
   </script>
 </head>
-
 <body>
 
 <header>
@@ -172,42 +121,52 @@
 
 <nav>
   <a href="#services">Services</a>
-  <a href="#quote">Free Quote</a>
+  <a href="#quote">Quote</a>
+  <a href="#reviews">Reviews</a>
   <a href="#contact">Contact</a>
 </nav>
 
-<section id="services" class="services">
+<section id="services" class="card">
   <h2>Our Services</h2>
   <ul>
     <li>✅ Residential Window Cleaning</li>
     <li>✅ Commercial Window Cleaning</li>
     <li>✅ Solar Panel Cleaning</li>
   </ul>
-  <h3>Service Area:</h3>
+  <h3>Service Area</h3>
   <p>Victorville, CA and surrounding High Desert cities (25-mile radius)</p>
-  <iframe
-    class="map"
+  <iframe class="map" 
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d422013.89916739296!2d-117.60517916032588!3d34.5362183379439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c35eab0d1e237d%3A0xa77f9bbd4e28772d!2sVictorville%2C%20CA!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus"
-    allowfullscreen=""
-    loading="lazy">
-  </iframe>
+    allowfullscreen="" loading="lazy"></iframe>
 </section>
 
-<section id="quote" class="services">
+<section id="quote" class="card">
   <h2>Get a Free Quote</h2>
   <form action="https://formspree.io/f/mdkzdael" method="POST">
     <input type="text" name="name" placeholder="Your Name" required />
     <input type="email" name="_replyto" placeholder="Your Email" required />
     <input type="tel" name="phone" placeholder="Your Phone Number" required />
-    <textarea name="message" rows="5" placeholder="Tell us what you need cleaned..." required></textarea>
+    <textarea name="message" rows="4" placeholder="Tell us what you need cleaned..." required></textarea>
     <button type="submit">Request Quote</button>
   </form>
 </section>
 
-<section id="contact" class="contact">
+<section id="reviews" class="card">
+  <h2>Customer Reviews</h2>
+  <div class="testimonial">
+    <strong>Mary G.</strong>
+    <p>"Tony’s team did an amazing job on both of my homes. Windows look brand new!"</p>
+  </div>
+  <div class="testimonial">
+    <strong>Jay R.</strong>
+    <p>"Punctual, professional, and super clean. Highly recommend Tony's Window Cleaning!"</p>
+  </div>
+</section>
+
+<section id="contact" class="card">
   <h2>Contact Us</h2>
-  <p><strong>Phone:</strong> <a href="tel:7145590300" style="color: var(--accent);">(714) 559-0300</a></p>
-  <p><strong>Email:</strong> <a href="mailto:twindowclean@gmail.com" style="color: var(--accent);">twindowclean@gmail.com</a></p>
+  <p><strong>Phone:</strong> <a href="tel:7145590300">(714) 559-0300</a></p>
+  <p><strong>Email:</strong> <a href="mailto:twindowclean@gmail.com">twindowclean@gmail.com</a></p>
 </section>
 
 <footer>
